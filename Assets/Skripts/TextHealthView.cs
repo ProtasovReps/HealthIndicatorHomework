@@ -1,35 +1,13 @@
 using TMPro;
 using UnityEngine;
 
-public class TextHealthView : MonoBehaviour
+public class TextHealthView : HealthView
 {
     [SerializeField] private TextMeshProUGUI _text;
 
-    private Health _health;
-
-    private void OnEnable()
+    protected override void SetValue()
     {
-        if(_health != null)
-            _health.AmountChanged += ShowHealth;
-    }
-
-    private void OnDisable()
-    {
-        if (_health != null)
-            _health.AmountChanged -= ShowHealth;
-    }
-
-    public void Initialize(Health health)
-    {
-        _health = health;
-        _health.AmountChanged += ShowHealth;
-
-        ShowHealth();
-    }
-
-    public void ShowHealth()
-    {
-        string message = $"{_health.Value} / {_health.MaxValue}";
+        string message = $"{Health.Value} / {Health.MaxValue}";
 
         _text.text = message;
     }

@@ -17,9 +17,9 @@ public class Health
     public int Value { get; private set; }
     public int MaxValue { get; private set; }
 
-    public void TakeDamage(int damage, EffectTypes effectType)
+    public void TakeDamage(int damage)
     {
-        if (_argumentChecker.CheckPositiveValue(damage) && _argumentChecker.CompareEffectTypes(EffectTypes.Damage, effectType))
+        if (_argumentChecker.CheckPositiveValue(damage))
         {
             Value -= Mathf.Clamp(damage, 0, Value);
 
@@ -27,9 +27,9 @@ public class Health
         }
     }
 
-    public void Heal(int healAmount, EffectTypes effectType)
+    public void Heal(int healAmount)
     {
-        if (_argumentChecker.CheckPositiveValue(healAmount) && _argumentChecker.CompareEffectTypes(EffectTypes.Heal, effectType))
+        if (_argumentChecker.CheckPositiveValue(healAmount))
         {
             Value += Mathf.Clamp(healAmount, 0, MaxValue - Value);
 

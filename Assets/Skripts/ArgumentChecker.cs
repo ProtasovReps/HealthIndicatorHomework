@@ -9,14 +9,4 @@ public class ArgumentChecker
 
         return true;
     }
-
-    public bool CompareEffectTypes(EffectTypes requiredType, EffectTypes givenType)
-    {
-        string exceptionMessage = $"Wrong effect type. Required: {requiredType} Given: {givenType}";
-
-        if (requiredType != givenType)
-            throw new ArgumentException(exceptionMessage);
-
-        return true;
-    }
 }

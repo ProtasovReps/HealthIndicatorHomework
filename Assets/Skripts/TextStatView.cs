@@ -1,13 +1,13 @@
 using TMPro;
 using UnityEngine;
 
-public class TextHealthView : HealthView
+public class TextStatView : StatView
 {
     [SerializeField] private TextMeshProUGUI _text;
 
     protected override void SetValue()
     {
-        string message = $"{Health.Value} / {Health.MaxValue}";
+        string message = $"{Stat.GetValue()} / {Stat.GetMaxValue()}";
 
         _text.text = message;
     }

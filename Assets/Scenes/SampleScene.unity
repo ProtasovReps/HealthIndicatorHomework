@@ -808,7 +808,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67b43abfdc1359746aeafa57675185d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _button: {fileID: 510539932}
   _healAmount: 1
 --- !u!1 &519420028
 GameObject:
@@ -1072,7 +1071,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00e4177482f791245955e9d916bd4e5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _button: {fileID: 576151416}
   _damage: 1
 --- !u!1 &624444117
 GameObject:
@@ -1457,7 +1455,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.96862745, g: 0.18431373, b: 0.11372549, a: 0.8235294}
+  m_Color: {r: 0.96862745, g: 0.18431373, b: 0.11372549, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

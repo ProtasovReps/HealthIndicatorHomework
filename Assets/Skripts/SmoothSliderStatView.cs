@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SmoothSliderHealthView : HealthView
+public class SmoothSliderStatView : StatView
 {
     [SerializeField] private Slider _slider;
     [SerializeField, Range(0.002f, 0.01f)] private float _valueChangeSpeed;
@@ -30,8 +30,9 @@ public class SmoothSliderHealthView : HealthView
 
     private float GetNewSliderValue()
     {
-        float healthRatio = (float)Health.Value / Health.MaxValue;
+        float healthRatio = (float)Stat.GetValue() / Stat.GetMaxValue();
         float newSliderValue = _slider.maxValue * healthRatio;
+
         return newSliderValue;
     }
 }

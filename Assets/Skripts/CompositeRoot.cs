@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class CompositeRoot : MonoBehaviour
 {
-    [SerializeField] private TextHealthView _textHealthView;
-    [SerializeField] private RawSliderHealthView _rawSliderHealthView;
-    [SerializeField] private SmoothSliderHealthView _smoothSliderHealthView;
+    [SerializeField] private TextStatView _textHealthView;
+    [SerializeField] private RawSliderStatView _rawSliderHealthView;
+    [SerializeField] private SmoothSliderStatView _smoothSliderHealthView;
     [SerializeField] private DamageButton _damageButton;
     [SerializeField] private HealButton _healButton;
 

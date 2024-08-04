@@ -1,29 +1,28 @@
 using System;
 using UnityEngine;
 
-public class Health
+public class Health : IValueShareable
 {
     private ArgumentChecker _argumentChecker;
+    private int _value;
+    private int _maxValue;
 
     public Health()
     {
         _argumentChecker = new ArgumentChecker();
-        MaxValue = 5;
-        Value = MaxValue;
+        _maxValue = 5;
+        _value = _maxValue;
     }
 
-    public event Action AmountChanged;
-
-    public int Value { get; private set; }
-    public int MaxValue { get; private set; }
+    public event Action ValueChanged;
 
     public void TakeDamage(int damage)
     {
         if (_argumentChecker.CheckPositiveValue(damage))
         {
-            Value -= Mathf.Clamp(damage, 0, Value);
+            _value -= Mathf.Clamp(damage, 0, _value);
 
-            AmountChanged?.Invoke();
+            ValueChanged?.Invoke();
         }
     }
 
@@ -31,9 +30,13 @@ public class Health
     {
         if (_argumentChecker.CheckPositiveValue(healAmount))
         {
-            Value += Mathf.Clamp(healAmount, 0, MaxValue - Value);
+            _value += Mathf.Clamp(healAmount, 0, _maxValue - _value);
 
-            AmountChanged?.Invoke();
+            ValueChanged?.Invoke();
         }
     }
+
+    public int GetValue() => _value;
+
+    public int GetMaxValue() => _maxValue;
 }
